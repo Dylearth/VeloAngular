@@ -1,0 +1,15 @@
+.barreNavigation {
+  background-color: rgba(252, 197, 95, 0.945);
+  margin-bottom: 5px;
+  box-shadow: 5px 2px 3px #99774c;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.liens{
+  display: flex;
+}

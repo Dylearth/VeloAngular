@@ -1,0 +1,34 @@
+<div class="container-fluid divContainer">
+  <div class="row">
+    <div class="col-sm-3">
+      <div id="tabCarte">
+      </div>
+    </div>
+    <div class="col-sm-9 divTable table-responsive">
+      <table class="tableauVelo table">
+        <thead>
+          <tr>
+            <th class="thTable" *ngFor="let head of headElements; let i = index">{{head | titlecase}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr [ngStyle]="{'background-color' :hovered === i ? '#ffe083' : 'white'}" (mouseover)="hovered = i"
+            (mouseout)="hovered = -1" *ngFor="let velo of velos; let i = index">
+            <td>{{ velo.fields.idstation }}</td>
+            <td>{{ velo.fields.nom }}</td>
+            <td [ngStyle]="{'text-decoration' : 'dotted'}"
+              (mouseover)="afficheCarte(velo.fields.coordonnees[0],velo.fields.coordonnees[1])">
+              <span class="spanCoordonnee">{{ velo.fields.coordonnees[0]}},{{velo.fields.coordonnees[1]}}</span>
+            </td>
+            <td class="tdEtat" [ngStyle]="{'color': velo.fields.etat=='En fonctionnement'? 'green' : 'red'}">
+              {{ velo.fields.etat }}</td>
+            <td>{{ velo.fields.nombreemplacementsactuels }}</td>
+            <td>{{ velo.fields.nombreemplacementsdisponibles }}</td>
+            <td>{{ velo.fields.nombrevelosdisponibles }}</td>
+            <td>{{ velo.fields.lastupdate | date :'d MMMM y' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

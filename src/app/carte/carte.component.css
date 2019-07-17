@@ -1,0 +1,13 @@
+#carte {
+  width: 50%;
+  margin: 20px auto 0 auto;
+  height: 500px;
+  border: 2px orange solid;
+  margin-top:70px;
+}
+
+@media screen and (max-width: 767px) {
+  #carte {
+    width: 100%;
+  }
+}
